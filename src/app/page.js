@@ -3,17 +3,16 @@ import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
 
+import card1Img from "./assets/card_1_img.png";
+import card2Img from "./assets/card_2_img.png";
+import card3Img from "./assets/card_3_img.png";
+import downloaderImg from "./assets/downloader.png";
+import featureImg from "./assets/featureImg.png";
+
 export default function Home() {
   const [inputVal, setInputVal] = useState("");
   const changeHandler = (e) => {
     setInputVal(e?.target?.value);
-  };
-
-  const options = {
-    method: "POST",
-    url: "http://ec2-34-206-43-97.compute-1.amazonaws.com:3000/tiktok",
-    headers: { "Content-Type": "application/json" },
-    data: { url: "https://www.tiktok.com/@hamzaig1/video/7279491364922920200" },
   };
 
   const onSubmit = async () => {
@@ -78,14 +77,14 @@ export default function Home() {
       <div className="secd-sec">
         <div className="cards">
           <div className="card">
-            <img src="assets/card_1_img.png" alt="" />
+            <Image src={card1Img} alt="" />
             <p>Find Videos</p>
             <span>
               Copy the Tiktok video URL by clicking Share and choosing copy link
             </span>
           </div>
           <div className="card">
-            <img src="assets/card_2_img.png" alt="" />
+            <Image src={card2Img} alt="" />
             <p>Past Video</p>
             <span>
               Paste the TikTok video URL in the box above and hit the download
@@ -93,7 +92,7 @@ export default function Home() {
             </span>
           </div>
           <div className="card">
-            <img src="assets/card_3_img.png" alt="" />
+            <Image src={card3Img} alt="" />
             <p>Download Videos</p>
             <span>
               Clicking Download Without watermark to download video mp4 without
@@ -104,52 +103,37 @@ export default function Home() {
       </div>
       {/* <!-- Third Section --> */}
       <div className="third-sec">
-        <p>TikTok Video Downloader</p>
-        <span>
-          Lorem ipsum dolor sit amet consectetur. Porttitor tempus eget id
-          curabitur massa. Blandit gravida imperdiet turpis nibh vivamus. Arcu
-          sed ac eget sit dolor parturient eget vitae. A porttitor natoque proin
-          aliquet ullamcorper. Eget at cras lorem lacus commodo ut. Nascetur
-          elementum ridiculus sit morbi rhoncus mauris cras ut. Porta gravida
-          tincidunt fusce dictum quam massa sem fusce risus. Condimentum quis
-          nisl quisque risus egestas. Felis posuere natoque hac massa. Sem urna
-          ut in rhoncus faucibus.
-        </span>
-        <div className="vactor">
-          <img
+        <div className="downloader">
+          <span>
+            <p>TikTok Video Downloader</p>
+            Lorem ipsum dolor sit amet consectetur. Porttitor tempus eget id
+            curabitur massa. Blandit gravida imperdiet turpis nibh vivamus. Arcu
+            sed ac eget sit dolor parturient eget vitae. A porttitor natoque
+            proin aliquet ullamcorper. Eget at cras lorem lacus commodo ut.
+            Nascetur elementum ridiculus sit morbi rhoncus mauris cras ut. Porta
+            gravida tincidunt fusce dictum quam massa sem fusce risus.
+            Condimentum quis nisl quisque risus egestas. Felis posuere natoque
+            hac massa. Sem urna ut in rhoncus faucibus.
+          </span>
+
+          <Image
             className="vactor-firstImg"
-            src="assets/third-sec-img1.svg"
+            src={downloaderImg}
             alt=""
+            style={{ marginLeft: "50px" }}
           />
-          <img
-            className="vactor-firstImg2"
-            src="assets/third-sec-img2.svg"
-            alt=""
-          />
-          <img
-            className="vactor-firstImg3"
-            src="assets/third=sec-img3.svg"
-            alt=""
-          />
-          <img
-            className="vactor-firstImg4"
-            src="assets/third-sec-img4.svg"
-            alt=""
-          />
-          <div className="sit"></div>
         </div>
       </div>
 
       {/* <!--4th Section Fetures  --> */}
       <div className="forth-sec">
         <div className="img-sec">
-          <img className="shuilt-img" src="assets/shuilt-img.svg" alt="" />
-          <img
-            class="shuilt-face-img"
-            src="assets/shuilt-face-img.svg"
+          <Image
+            className="vactor-firstImg"
+            src={featureImg}
             alt=""
+            style={{ marginLeft: "50px" }}
           />
-          <img class="hand" src="assets/hand-img.svg" alt="" />
         </div>
         <div class="content-featu">
           <p class="head"> Features</p>
